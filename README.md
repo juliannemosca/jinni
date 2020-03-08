@@ -20,13 +20,13 @@ Well, I'm happy I don't have to defend myself from stormtroopers with this one, 
 
 _(this is a long personal anecdote, so if you're only interested in the technical parts you can skip right ahead to the next section)._
 
-as I finished reading through the LISP 1.5 Manual, my starry-eyed younger self thought it would be cool to implement the five LISP elementary functions: `cons`, `car`, `cdr`, `eq` and `atom`. And since I was there, I thought it'd be nice to also give it a shot to implement `apply` and `eval` as shown on page 13. After all, having read Alan Kay repeatedly prising this code many times, I thought it'd be worth to actually try to implement it rather than just feeling content with having read it once while lying comfortably on the armchair. And also it shouldn't be much of a stretch, right? I just needed a couple more functions... but, the "real" `apply` and `eval` are actually described in detail later on, on page 70 in the Appendix B section. Reading it again, but this time thinking on how I should go about implement it, I realized it was already a bit more complicated than I had anticipated.
+As I finished reading through the LISP 1.5 Manual, my starry-eyed younger self thought it would be cool to implement the five LISP elementary functions: `cons`, `car`, `cdr`, `eq` and `atom`. And since I was there, I thought it'd be nice to also give it a shot to implement `apply` and `eval` as shown on page 13. After all, having read Alan Kay repeatedly prising this code many times, I thought it'd be worth to actually try to implement it rather than just feeling content with having read it once while lying comfortably on the armchair. And also it shouldn't be much of a stretch, right? I just needed a couple more functions... but, the "real" `apply` and `eval` are actually described in detail later on, on page 70 in the Appendix B section. Reading it again, but this time thinking on how I should go about implement it, I realized it was already a bit more complicated than I had anticipated.
 
 I spent some time hacking on it, at the beginning trying to keep **jinni** close to the manual, implementing the property lists for atoms and related functions. I didn't set up proper debugging mechanisms and also I didn't write clean code from the start. Both things I know the importance of, but this was a personal project so it didn't matter I thought (oh I was SO wrong). Then things were getting nightmarish. I recoiled, but still wanted to see how far I could get. That's when I decided to let the implementation take a separate path in some aspects from the manual, so I got more "creative" with it, so to say, while still trying to keep the original flavor.
 
 The fact that I worked on this project on and off for about two years, always in relatively constrained time slots, didn't really help when trying to figure out what was the last darn thing that broke and how I managed to fix it. So everything is pretty hacky in the code.
 
-Finally, after I got FEXPRs to "kind of" work, and did some workarounds for memory management that would at least let me sleep at night, I decided to wrap it. Any further work on this would be a waste of time, as at this point, if I wanted to do anything more serious with it I'd have to re-write it from scratch (again, actually, since I did re-write it. Two times. So that was it).
+After I got FEXPRs to "kind of" work, and did some workarounds for memory management that would at least let me sleep at night, I decided to wrap it. Any further work on this would be a waste of time, as at this point, if I wanted to do anything more serious with it I'd have to re-write it from scratch (again, actually, since I did re-write it. Two times. So that was it).
 
 Finally, I'm completely sure there's still plenty of bugs lying around in the code (in fact I'm already finding one while writing this README), but those won't be fixed, since as I said before, the purpose of this program is completely fulfilled. In fact I'd even say, given the initial premise of implementing the five elemental functions and maybe a parser to play around with them, this was already waaaay too carried away... but what a fun journey has it been!
 
@@ -101,5 +101,5 @@ This is embarrasingly sub-optimal, I know, and on top of it it's still buggy, bu
 
 ### References:
 
-`[1]`: https://mitpress.mit.edu/books/lisp-15-programmers-manual
+`[1]`: https://mitpress.mit.edu/books/lisp-15-programmers-manual  
 `[2]`: https://www.nhplace.com/kent/Papers/Special-Forms.html
